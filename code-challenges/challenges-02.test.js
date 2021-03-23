@@ -85,7 +85,7 @@ const setStatusAsAuthor = (people) => {
   // Solution code here...
 
   people.forEach(idx => {
-    Object.assign(idx, { isAuthor: true })
+    Object.assign(idx, { isAuthor: true });
   });
 
 };
