@@ -40,16 +40,17 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  arr.sort(function (a, b) {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
-  return arr;
+  // arr.sort(function (a, b) {
+  //   if (a < b) {
+  //     return -1;
+  //   }
+  //   if (a > b) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
+  // return arr;
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,17 +93,17 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
-  arr.sort(function (a, b) {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
-  return arr;
-
+  // arr.sort(function (a, b) {
+  //   if (a < b) {
+  //     return -1;
+  //   }
+  //   if (a > b) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
+  // return arr;
+  return arr.sort();
 
 };
 
@@ -121,7 +122,6 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  const newArray = [];
   arr.sort(function (a, b) {
     let aItem = a.price;
     let bItem = b.price;
@@ -147,6 +147,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
