@@ -57,6 +57,7 @@ Write a function named containsWorld that takes in a string or number of any len
 const containsWorld = (input) => {
   // Solution code here...
   let validator = /(world)/g;
+  // console.log(input);
   return validator.test(input);
 };
 
@@ -70,7 +71,13 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let validator = /([A-Z])\w+/g;
+  let validator = /\b[A-Z]\w*\b/g;
+  let solution = [];
+  if (str.match(validator) === null) {
+    return solution;
+  } else {
+    return str.match(validator);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,14 +88,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let validator = /\b[A-J]/g;
+  let validator = /^[A-J][a-z]*/g;
   let newArray = [];
   arr.forEach(idx => {
-    if (validator.test(idx)) {
+    if (idx.match(validator)) {
       newArray.push(idx);
     }
   });
-  console.log(newArray);
   return newArray;
 
 };
@@ -168,7 +174,7 @@ Run your tests from the console: jest challenges-04.solution.test.js
 describe('Testing challenge 1', () => {
   test('It should add two to every value', () => {
     expect(addTwo([1, 2, 4])).toStrictEqual([3, 4, 6]);
-  })
+  });
 });
 
 describe('Testing challenge 2', () => {
@@ -180,8 +186,8 @@ describe('Testing challenge 2', () => {
   });
   test('It should return false if the input does not contain a w', () => {
     expect(containsW('hello everyone')).toBe(false);
-  })
-})
+  });
+});
 
 describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
@@ -207,7 +213,7 @@ describe('Testing challenge 4', () => {
   test('It should return false if the input does not contain the word school', () => {
     expect(containsWorld('hello everyone')).toBe(false);
   });
-})
+});
 
 describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
