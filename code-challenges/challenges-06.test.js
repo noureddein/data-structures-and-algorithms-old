@@ -1,6 +1,5 @@
 'use strict';
 
-const { name } = require("mustache");
 
 let log = console.log;
 /* ------------------------------------------------------------------------------------------------
@@ -168,13 +167,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  arr.forEach(idx => {
-    if (Object.keys(idx['name']) === character) {
-      log(idx);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]['name'] === character) {
+      return true;
     }
-
-  });
-
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
