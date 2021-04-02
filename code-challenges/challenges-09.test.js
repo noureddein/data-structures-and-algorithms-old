@@ -22,10 +22,10 @@ function transformToLis(obj) {
   // Solution code here...
   // console.log(obj);
   let arr = Object.values(obj).reduce((acc) => {
-    acc.push('<li>' + Object.entries(obj) + '</li>');
+    acc.push('<li>' + Object.keys(ob) + '</li>');
     return acc;
   }, []);
-  // console.log(arr);
+  console.log(arr);
 }
 
 /* ------------------------------------------------------------------------------------------------
