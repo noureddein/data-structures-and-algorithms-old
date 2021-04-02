@@ -42,6 +42,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let newArr = [];
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      newArr.push(input[i][j]);
+    }
+  }
+  const solution = newArr.filter(item => item === target);
+  return solution.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,6 +64,11 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let total = input.reduce((acc, val) => {
+    return acc + val.reduce((acc, val) => { return acc + val; }, 0);
+  }, 0);
+  return total;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +84,16 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  // Solution code here..
+  let newArr = [];
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      newArr.push(input[i][j]);
+    }
+  }
+  const result = newArr.filter(val => !(typeof val === 'string'));
+  let solution = result.map(item => Math.pow(2, item));
+  return (solution);
 };
 
 /* ------------------------------------------------------------------------------------------------
